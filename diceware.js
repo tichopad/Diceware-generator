@@ -35,7 +35,7 @@ const getCodes = (length) => {
 }
 
 // Open words file read stream
-const readStream = fs.createReadStream(`${LANG}.txt`, 'utf8')
+const readStream = fs.createReadStream(`${__dirname}/${LANG}.txt`, 'utf8')
 const lineReader = rl.createInterface({ input: readStream })
 
 // Get codes array and prepare final diceware words array
