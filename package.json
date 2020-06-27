@@ -1,0 +1,20 @@
+{
+  "name": "diceware-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "diceware": "index.js"
+  },
+  "repository": "https://github.com/tichopad/Diceware-generator.git",
+  "author": "Michael Tichopad <michaeltichopad01@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "meow": "^7.0.1",
+    "random-number-csprng": "^1.0.2"
+  }
+}
