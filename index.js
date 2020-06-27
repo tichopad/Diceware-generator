@@ -38,7 +38,7 @@ const cli = meow(
   },
 );
 
-const schemaInput = joi.number().integer().positive().min(1).default(6).label('Passphrase length');
+const schemaInput = joi.number().integer().min(1).max(7776).default(6).label('Passphrase length');
 const schemaFlags = joi.object({
   separator: joi.string().default(' ').label('Separator'),
   list: joi.string().equal('beale', 'cs', 'en').default('en').label('List'),
