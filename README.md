@@ -1,31 +1,34 @@
-# A simple diceware generator
+# Diceware passphrase generator
 
-Loads CZ or EN diceware phrases file to generate pseudorandom passphrase in NodeJS.
+Generates [diceware](http://world.std.com/~reinhold/diceware.html) passphrase from local word list.
 
 ## Usage
 
-Execute main JS file in terminal:
+Run main JS file:
 
 ```bash
-node diceware.js {LENGTH} {LANG} {SEPARATOR}
+node index.js {LENGTH} --list {LIST} --separator {SEPARATOR}
 ```
 
-* `{LENGTH}` - number indicating length of the passhprase (number of phrases)
-* `{LANG}` - string locale of the phrases source file ("cz" or "en")
-* `{SEPARATOR}` - string indicating separator between individual phrases in the resulting passphrase
+* `{LENGTH}` - number of words in a passphrase (default "6")
+* `{LIST}` - source word list: "en", "beale" or "cs" (default "en")
+* `{SEPARATOR}` - string separating words in a passphrase
+
+For help run:
+```bash
+node index.js --help
+```
 
 ### Example
 
 #### Input
 
 ```bash
-node diceware.js 8 en "-"
+node index.js 8 -s "-"
 ```
 
 #### Output
 
 ```bash
-You threw dice codes: 64145, 26562, 45462, 46334, 46455, 13655, 63632, 65241
-Your passphrase is: botch-fiber-promotion-raft-reappear-unfazed-unimpeded-uproar
-Time: 0 s, 21.912494 ms
+botch-fiber-promotion-raft-reappear-unfazed-unimpeded-uproar
 ```
