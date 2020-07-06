@@ -7,7 +7,7 @@ Generates [diceware](http://world.std.com/~reinhold/diceware.html) passphrase fr
 Run main JS file:
 
 ```bash
-node index.js {LENGTH} --list {LIST} --separator {SEPARATOR}
+index.js {LENGTH} --list {LIST} --separator {SEPARATOR}
 ```
 
 * `{LENGTH}` - number of words in a passphrase (default "6")
@@ -16,7 +16,7 @@ node index.js {LENGTH} --list {LIST} --separator {SEPARATOR}
 
 For help run:
 ```bash
-node index.js --help
+index.js --help
 ```
 
 ### Example
@@ -24,7 +24,7 @@ node index.js --help
 #### Input
 
 ```bash
-node index.js 8 -s "-"
+index.js 8 -s "-"
 ```
 
 #### Output
