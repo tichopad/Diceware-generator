@@ -68,17 +68,22 @@ const codesPromises = [...Array(passphraseLength)].map(createRandomCode(5));
   const readStream = fs.createReadStream(listFilePath, 'utf8');
   const lineReader = readline.createInterface({ input: readStream });
 
-  let diceware = [];
+  let diceware = [...Array(codes.length)];
+  let wordsCount = 0;
 
   lineReader
     .on('line', line => {
-      if (diceware.length >= passphraseLength) {
+      if (wordsCount >= passphraseLength) {
         lineReader.close();
         return;
       }
+
       const [code, word] = line.split(/\s+/);
-      if (codes.includes(code)) {
-        diceware.push(word);
+      const codeIndex = codes.indexOf(code);
+
+      if (codeIndex !== -1) {
+        diceware[codeIndex] = word;
+        wordsCount++;
       }
     })
     .on('close', () => {
